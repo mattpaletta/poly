@@ -10,9 +10,10 @@ python:
 
 
 install:
-  - export ID=$(cat /etc/os-release | grep -s "^ID=")
-  - export VERSION_ID=$(cat /etc/os-release | grep -s "^ID=")
+  - ID=$(cat /etc/os-release | grep -s "^ID=")
+  - VERSION_ID=$(cat /etc/os-release | grep -s "^ID=")
   - distribution=$ID$VERSION_ID
+  - echo $distribution
   - curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
   - curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
   - apt-get update && apt-get install -y nvidia-container-toolkit
