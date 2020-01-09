@@ -10,4 +10,4 @@ python:
 
 
 script:
-  - nvidia-docker run nvidia/cuda:9.0-base nvidia-smi
+  - ./build.sh
