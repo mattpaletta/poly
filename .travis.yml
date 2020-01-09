@@ -9,14 +9,5 @@ python:
   - "3.6"
 
 
-install:
-  - cat /etc/os-release | grep "^ID="
-  - cat /etc/os-release | grep "^VERSION_ID="
-  - distribution=ubuntu16.04
-  - curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-  - curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-  - sudo apt-get update -y -qq && sudo apt-get install -y nvidia-container-toolkit nvidia-docker2
-  - sudo systemctl restart docker
-
 script:
   - nvidia-docker run nvidia/cuda:9.0-base nvidia-smi

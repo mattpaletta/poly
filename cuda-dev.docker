@@ -1,0 +1,6 @@
+FROM rapidsai/rapidsai:cuda10.1-runtime-ubuntu16.04-py3.7
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-ubuntu1604.pin
+RUN mv cuda-ubuntu1604.pin /etc/apt/preferences.d/cuda-repository-pin-600
+RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+RUN apt-get update -y -qq && apt-get -y install --no-install-suggests --no-install-recommends cuda
+
