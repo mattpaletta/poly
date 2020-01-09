@@ -10,8 +10,8 @@ python:
 
 
 install:
-  - ID=$(cat /etc/os-release | grep -s "^ID=")
-  - VERSION_ID=$(cat /etc/os-release | grep -s "^ID=")
+  - export $(cat /etc/os-release | grep "^ID=")
+  - export $(cat /etc/os-release | grep "^VERSION_ID=")
   - distribution=$ID$VERSION_ID
   - echo $distribution
   - curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
