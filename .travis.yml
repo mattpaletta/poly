@@ -8,8 +8,6 @@ services:
 python:
   - "3.6"
 
- env:
-     #  - LOCAL_EXAMPLES=1 LITTLE_BOOK=0
 
 install:
   - distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
