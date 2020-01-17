@@ -28,10 +28,9 @@ if has_cuda():
 
 if cuda_and_linux():
     requirements = requirements + [
-        "cuDF",
-        "cuML",
-        "cuSpacial",
-        "cuGraph"
+        "cudf",
+        "cuml",
+        "cugraph"
     ]
 elif platform.system() == "Windows":
     pass
